@@ -38,8 +38,7 @@ export default function Home() {
     <main className="max-w-4xl mx-auto px-6 py-16 space-y-24">
 
       {/* Header */}
-      <header className="flex items-center justify-between">
-        <Image src="/logo-mark.png" alt="Open Campus Advisor" width={28} height={28} className="rounded-lg"/>
+      <header className="flex items-center justify-end">
         <div className="flex items-center gap-6 text-sm text-gray-500">
           <Link href="https://github.com/open-campus-advisor/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">GitHub</Link>
           <Link href="https://www.npmjs.com/package/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">npm</Link>
@@ -49,9 +48,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="space-y-6">
-        <div className="inline-block bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full font-medium">
-          Reference implementation: Wesleyan University
-        </div>
+        <Image src="/logo-mark.png" alt="Open Campus Advisor" width={120} height={120} className="rounded-2xl"/>
         <h1 className="text-5xl font-bold leading-tight tracking-tight">
           Open Campus Advisor
         </h1>
