@@ -13,12 +13,23 @@ const TOOLS = [
 ];
 
 const EXAMPLES = [
+  // Academics
   "What CS courses can I take as a freshman this fall?",
   "What are the prerequisites for COMP312?",
-  "Which professors do machine learning research?",
-  "Show me all first-year seminars related to climate.",
-  "Tell me about Professor Manfredi's research and grants.",
-  "I want to study computational biology — where do I start?",
+  "Which ENGL courses count toward my distribution requirements?",
+  "Show me all first-year seminars related to climate or the environment.",
+  "What is Professor Danner teaching this spring?",
+  // Research
+  "Which COMP professors do machine learning research?",
+  "Which BIOL faculty have active NIH grants right now?",
+  "I'm interested in neuroscience — which professors should I approach for research?",
+  "Tell me about Professor Manfredi's research and what grants she has.",
+  "Which PSYC faculty study child development or learning?",
+  "I want to work in a lab this summer — who in EES is doing climate research?",
+  // Connected
+  "I want to study computational biology — what courses should I take and which professors should I approach?",
+  "I like writing and politics — what seminars and courses exist at the intersection?",
+  "I'm a pre-med freshman — what should I take this fall and who is doing interesting biology research?",
 ];
 
 export default function Home() {
@@ -66,15 +77,45 @@ export default function Home() {
       </section>
 
       {/* Example prompts */}
-      <section className="space-y-6">
+      <section className="space-y-8">
         <h2 className="text-2xl font-semibold">What students ask</h2>
-        <div className="grid gap-3">
-          {EXAMPLES.map((example) => (
-            <div key={example} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-              <span className="text-gray-300 mt-0.5">›</span>
-              <span className="text-gray-700 italic">&ldquo;{example}&rdquo;</span>
+
+        <div className="space-y-6">
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Academics</p>
+            <div className="grid gap-2">
+              {EXAMPLES.slice(0, 5).map((example) => (
+                <div key={example} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-gray-300 mt-0.5">›</span>
+                  <span className="text-gray-700 italic">&ldquo;{example}&rdquo;</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Research</p>
+            <div className="grid gap-2">
+              {EXAMPLES.slice(5, 11).map((example) => (
+                <div key={example} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-gray-300 mt-0.5">›</span>
+                  <span className="text-gray-700 italic">&ldquo;{example}&rdquo;</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Connected</p>
+            <div className="grid gap-2">
+              {EXAMPLES.slice(11).map((example) => (
+                <div key={example} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-gray-300 mt-0.5">›</span>
+                  <span className="text-gray-700 italic">&ldquo;{example}&rdquo;</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
