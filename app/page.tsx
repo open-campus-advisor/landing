@@ -202,6 +202,65 @@ app.use('/api/v1/yourschool', createRestRouter(new YourSchoolProvider()));`}</pr
         </Link>
       </section>
 
+      {/* Coming soon: dashboard */}
+      <section className="space-y-6">
+        <div className="flex items-center gap-3">
+          <h2 className="text-2xl font-semibold">Campus insights dashboard</h2>
+          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Coming soon</span>
+        </div>
+        <p className="text-gray-500">
+          Every query through Open Campus Advisor is logged anonymously. Soon that data becomes a public dashboard — showing what students at each campus are actually exploring.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="border border-gray-100 rounded-xl p-5 space-y-2">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Trending this week</p>
+            <div className="space-y-2 pt-1">
+              {["machine learning", "climate change", "neuroscience", "algorithms"].map((t) => (
+                <div key={t} className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">{t}</span>
+                  <div className="h-1.5 rounded-full bg-gray-100 w-20 overflow-hidden">
+                    <div className="h-full bg-gray-300 rounded-full" style={{width: t === "machine learning" ? "90%" : t === "climate change" ? "70%" : t === "neuroscience" ? "50%" : "35%"}}/>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="border border-gray-100 rounded-xl p-5 space-y-2">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Top departments</p>
+            <div className="space-y-2 pt-1">
+              {["COMP", "BIOL", "ENVS", "PSYC"].map((d) => (
+                <div key={d} className="flex items-center justify-between">
+                  <span className="text-sm font-mono text-gray-600">{d}</span>
+                  <div className="h-1.5 rounded-full bg-gray-100 w-20 overflow-hidden">
+                    <div className="h-full bg-gray-300 rounded-full" style={{width: d === "COMP" ? "85%" : d === "BIOL" ? "65%" : d === "ENVS" ? "55%" : "40%"}}/>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="border border-gray-100 rounded-xl p-5 space-y-2">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Most explored</p>
+            <div className="space-y-2.5 pt-1">
+              {[
+                { label: "Course search", pct: "48%" },
+                { label: "Faculty research", pct: "31%" },
+                { label: "First-year seminars", pct: "21%" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">{item.label}</span>
+                  <span className="text-xs text-gray-400">{item.pct}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <p className="text-sm text-gray-400">
+          Data is anonymized — no personal information is collected. <Link href="/privacy" className="underline hover:text-gray-600">Privacy policy →</Link>
+        </p>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-gray-100 pt-8 flex items-center justify-between text-sm text-gray-400">
         <span>Open Campus Advisor — MIT License</span>
