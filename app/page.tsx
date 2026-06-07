@@ -39,7 +39,7 @@ export default function Home() {
 
       {/* Header */}
       <header className="flex items-center justify-between">
-        <Image src="/logo-mark.png" alt="Open Campus Advisor" width={52} height={52} className="rounded-xl"/>
+        <Image src="/logo-mark.png" alt="Open Campus Advisor" width={28} height={28} className="rounded-lg"/>
         <div className="flex items-center gap-6 text-sm text-gray-500">
           <Link href="https://github.com/open-campus-advisor/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">GitHub</Link>
           <Link href="https://www.npmjs.com/package/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">npm</Link>
