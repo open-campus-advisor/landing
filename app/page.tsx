@@ -39,10 +39,7 @@ export default function Home() {
 
       {/* Header */}
       <header className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Image src="/logo-mark.png" alt="Open Campus Advisor" width={36} height={36} className="rounded-lg"/>
-          <span className="font-semibold text-lg">Open Campus Advisor</span>
-        </div>
+        <Image src="/logo-mark.png" alt="Open Campus Advisor" width={52} height={52} className="rounded-xl"/>
         <div className="flex items-center gap-6 text-sm text-gray-500">
           <Link href="https://github.com/open-campus-advisor/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">GitHub</Link>
           <Link href="https://www.npmjs.com/package/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">npm</Link>
@@ -56,8 +53,11 @@ export default function Home() {
           Reference implementation: Wesleyan University
         </div>
         <h1 className="text-5xl font-bold leading-tight tracking-tight">
-          AI advising for<br />any university.
+          Open Campus Advisor
         </h1>
+        <p className="text-2xl text-gray-400 font-light leading-snug">
+          AI advising for any university.
+        </p>
         <p className="text-xl text-gray-500 max-w-xl leading-relaxed">
           Open source. Works with Claude and ChatGPT. Live course catalog, faculty research,
           active grants — through natural conversation.
