@@ -109,11 +109,15 @@ export default function Home() {
         <div className="space-y-4">
           <h3 className="font-medium">ChatGPT</h3>
           <p className="text-sm text-gray-500">
-            REST API live at{" "}
-            <Link href="https://api.opencampusadvisor.org" target="_blank" className="text-blue-600 hover:underline">
-              api.opencampusadvisor.org
+            Use the{" "}
+            <Link
+              href="https://chatgpt.com/g/g-6a2583a8a7cc819198378184eaf9b15f-wesleyan-academic-advisor"
+              target="_blank"
+              className="text-blue-600 hover:underline"
+            >
+              Wesleyan Academic Advisor GPT
             </Link>
-            . Custom GPT coming soon.
+            {" "}— works on ChatGPT mobile and desktop.
           </p>
         </div>
       </section>
