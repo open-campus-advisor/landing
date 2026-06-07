@@ -61,6 +61,11 @@ export default function Home() {
           Open source. Works with Claude and ChatGPT. Live course catalog, faculty research,
           active grants — through natural conversation.
         </p>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Wesleyan University</span>
+          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Columbia University</span>
+          <span className="text-xs text-gray-400 px-1">+ your school →</span>
+        </div>
         <div className="flex items-center gap-4 pt-2">
           <Link
             href="https://github.com/open-campus-advisor/open-campus-advisor"
