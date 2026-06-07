@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const TOOLS = [
   { name: "list_departments", description: "All departments and programs with subject codes" },
@@ -38,7 +39,10 @@ export default function Home() {
 
       {/* Header */}
       <header className="flex items-center justify-between">
-        <span className="font-semibold text-lg">Open Campus Advisor</span>
+        <div className="flex items-center gap-3">
+          <Image src="/logo-mark.png" alt="Open Campus Advisor" width={36} height={36} className="rounded-lg"/>
+          <span className="font-semibold text-lg">Open Campus Advisor</span>
+        </div>
         <div className="flex items-center gap-6 text-sm text-gray-500">
           <Link href="https://github.com/open-campus-advisor/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">GitHub</Link>
           <Link href="https://www.npmjs.com/package/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">npm</Link>

@@ -7,11 +7,16 @@ const geist = Geist({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Open Campus Advisor — AI advisor for any university",
   description: "Open source AI advisor for any university. Get live course info, faculty research, and academic guidance through Claude or ChatGPT.",
+  icons: {
+    icon: "/favicon-32.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Open Campus Advisor",
     description: "Open source AI advisor for any university — academics, research, and career through natural conversation.",
     url: "https://opencampusadvisor.org",
     siteName: "Open Campus Advisor",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
 };
 
