@@ -89,12 +89,6 @@ export default function Home() {
 
       {/* Header */}
       <header className="flex items-center justify-end">
-        <Link
-          href="mailto:tolga@breaklinedigital.com"
-          className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
-        >
-          Contact
-        </Link>
       </header>
 
       {/* Hero */}
