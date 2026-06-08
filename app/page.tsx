@@ -40,9 +40,7 @@ export default function Home() {
       {/* Header */}
       <header className="flex items-center justify-end">
         <div className="flex items-center gap-6 text-sm text-gray-500">
-          <Link href="https://github.com/open-campus-advisor/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">GitHub</Link>
-          <Link href="https://www.npmjs.com/package/open-campus-advisor" target="_blank" className="hover:text-gray-900 transition-colors">npm</Link>
-          <Link href="https://api.opencampusadvisor.org/health" target="_blank" className="hover:text-gray-900 transition-colors">API</Link>
+          <Link href="https://api.opencampusadvisor.org/health" target="_blank" className="hover:text-gray-900 transition-colors">API status</Link>
         </div>
       </header>
 
@@ -58,7 +56,7 @@ export default function Home() {
           AI advising for any university.
         </p>
         <p className="text-xl text-gray-500 max-w-xl leading-relaxed">
-          Open source. Works with Claude and ChatGPT. Live course catalog, faculty research,
+          Works with Claude and ChatGPT. Live course catalog, faculty research,
           active grants — through natural conversation.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
@@ -71,18 +69,11 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-4 pt-2">
           <Link
-            href="https://github.com/open-campus-advisor/open-campus-advisor"
+            href="https://chatgpt.com/g/g-6a2583a8a7cc819198378184eaf9b15f-wesleyan-academic-advisor"
             target="_blank"
             className="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
           >
-            Get started on GitHub
-          </Link>
-          <Link
-            href="https://www.npmjs.com/package/open-campus-advisor"
-            target="_blank"
-            className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
-          >
-            npm install →
+            Try with ChatGPT →
           </Link>
         </div>
       </section>
@@ -193,24 +184,17 @@ export default function Home() {
       <section className="space-y-6">
         <h2 className="text-2xl font-semibold">Add your school</h2>
         <p className="text-gray-500">
-          Any university with a public course catalog can be added. Implement one interface, get all 9 tools for free.
+          Any university with a public course catalog can be added. Each school gets all 9 tools — course search, faculty research, NIH grants, and more — through a single provider interface.
         </p>
-        <pre className="bg-gray-900 text-gray-100 p-5 rounded-xl text-sm overflow-x-auto leading-relaxed">{`// src/providers/yourschool.ts
-export class YourSchoolProvider implements CatalogProvider {
-  readonly schoolName = "Your University";
-  readonly defaultTerm = "...";
-  // implement 9 methods
-}
-
-// api.ts — one line to go live
-app.use('/api/v1/yourschool', createRestRouter(new YourSchoolProvider()));`}</pre>
-        <Link
-          href="https://github.com/open-campus-advisor/open-campus-advisor"
-          target="_blank"
-          className="inline-block text-sm text-gray-500 hover:text-gray-900 transition-colors"
-        >
-          Read the contributing guide →
-        </Link>
+        <p className="text-gray-500">
+          Want your school on Open Campus Advisor?{" "}
+          <Link
+            href="mailto:tolga@breaklinedigital.com"
+            className="text-gray-900 underline hover:no-underline"
+          >
+            Get in touch →
+          </Link>
+        </p>
       </section>
 
       {/* Coming soon: dashboard */}
@@ -274,11 +258,10 @@ app.use('/api/v1/yourschool', createRestRouter(new YourSchoolProvider()));`}</pr
 
       {/* Footer */}
       <footer className="border-t border-gray-100 pt-8 flex items-center justify-between text-sm text-gray-400">
-        <span>Open Campus Advisor — MIT License</span>
+        <span>© 2026 Open Campus Advisor</span>
         <div className="flex gap-6">
-          <Link href="https://github.com/open-campus-advisor/open-campus-advisor" target="_blank" className="hover:text-gray-600 transition-colors">GitHub</Link>
-          <Link href="https://www.npmjs.com/package/open-campus-advisor" target="_blank" className="hover:text-gray-600 transition-colors">npm</Link>
           <Link href="https://api.opencampusadvisor.org/health" target="_blank" className="hover:text-gray-600 transition-colors">API status</Link>
+          <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
         </div>
       </footer>
 
