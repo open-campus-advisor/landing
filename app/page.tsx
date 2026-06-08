@@ -87,10 +87,6 @@ export default function Home() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16 space-y-24">
 
-      {/* Header */}
-      <header className="flex items-center justify-end">
-      </header>
-
       {/* Hero */}
       <section className="space-y-6">
         <div className="flex items-center gap-5">
@@ -119,7 +115,7 @@ export default function Home() {
             Try with ChatGPT →
           </Link>
           <Link
-            href="mailto:tolga@breaklinedigital.com"
+            href="mailto:hello@opencampusadvisor.org"
             className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
           >
             Bring it to your campus →
@@ -189,7 +185,7 @@ export default function Home() {
           Every query is logged anonymously. Your institution gets a dashboard showing what students are actually exploring — trending topics, popular departments, common career paths — updated in real time.
         </p>
         <Link
-          href="mailto:tolga@breaklinedigital.com"
+          href="mailto:hello@opencampusadvisor.org"
           className="inline-block bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
         >
           Get in touch →
@@ -200,7 +196,7 @@ export default function Home() {
       <footer className="border-t border-gray-100 pt-8 flex items-center justify-between text-sm text-gray-400">
         <span>© 2026 Open Campus Advisor</span>
         <div className="flex gap-6">
-          <Link href="mailto:tolga@breaklinedigital.com" className="hover:text-gray-600 transition-colors">Contact</Link>
+          <Link href="mailto:hello@opencampusadvisor.org" className="hover:text-gray-600 transition-colors">Contact</Link>
           <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
         </div>
       </footer>
