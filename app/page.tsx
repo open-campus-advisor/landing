@@ -16,21 +16,21 @@ const TOOLS = [
 const EXAMPLES = [
   // Academics
   "What CS courses can I take as a freshman this fall?",
-  "What are the prerequisites for COMP312?",
-  "Which ENGL courses count toward my distribution requirements?",
+  "What are the prerequisites for CPSC 365 at Yale?",
+  "Which courses at Stanford count toward WAYS requirements?",
   "Show me all first-year seminars related to climate or the environment.",
   "What is Professor Danner teaching this spring?",
   // Research
-  "Which COMP professors do machine learning research?",
+  "Which CS professors at MIT do machine learning research?",
   "Which BIOL faculty have active NIH grants right now?",
-  "I'm interested in neuroscience — which professors should I approach for research?",
-  "Tell me about Professor Manfredi's research and what grants she has.",
+  "I'm interested in neuroscience — which professors at Columbia should I approach?",
+  "Who at Stanford is doing research on large language models?",
   "Which PSYC faculty study child development or learning?",
-  "I want to work in a lab this summer — who in EES is doing climate research?",
+  "I want to work in a lab this summer — who in Earth Systems at Stanford is doing climate research?",
   // Connected
   "I want to study computational biology — what courses should I take and which professors should I approach?",
   "I like writing and politics — what seminars and courses exist at the intersection?",
-  "I'm a pre-med freshman — what should I take this fall and who is doing interesting biology research?",
+  "I'm a pre-med freshman at Yale — what should I take this fall and who is doing interesting biology research?",
 ];
 
 export default function Home() {
@@ -61,10 +61,12 @@ export default function Home() {
           Open source. Works with Claude and ChatGPT. Live course catalog, faculty research,
           active grants — through natural conversation.
         </p>
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Wesleyan University</span>
-          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Columbia University</span>
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Wesleyan</span>
+          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Columbia</span>
           <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">MIT</span>
+          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Stanford</span>
+          <span className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">Yale</span>
           <span className="text-xs text-gray-400 px-1">+ your school →</span>
         </div>
         <div className="flex items-center gap-4 pt-2">
