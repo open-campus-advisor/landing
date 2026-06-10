@@ -120,7 +120,6 @@ export default function Integrate() {
         <p className="text-gray-900 font-medium text-lg leading-relaxed">
           &ldquo;We&apos;ve already built the live data infrastructure you&apos;d spend 18 months building. Plug our graph into your product and your AI advisor has real answers instead of hallucinations.&rdquo;
         </p>
-        <p className="text-sm text-gray-400">The pitch to College Board, Scoir, Naviance, and any platform with a student relationship.</p>
       </section>
 
       {/* What's in the graph */}
