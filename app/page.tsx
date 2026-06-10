@@ -74,7 +74,7 @@ const HOW_IT_WORKS = [
   {
     step: "02",
     title: "The graph connects",
-    description: "Open Campus Advisor traverses the academic graph in real time — live course data, faculty research, degree requirements, and career outcomes across thirty-three colleges and universities.",
+    description: "Open Campus Advisor traverses the academic graph in real time — live course data, faculty research, degree requirements, and career outcomes across top US colleges and universities.",
   },
   {
     step: "03",
@@ -96,12 +96,13 @@ export default function Home() {
           Academic navigation for students.
         </p>
         <p className="text-xl text-gray-500 max-w-xl leading-relaxed">
-          From career goal to course sequence — across thirty-three colleges and universities — through natural conversation with Claude or ChatGPT.
+          Know exactly where you&apos;re going. Real courses, real faculty, real career outcomes — through natural conversation with Claude or ChatGPT.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
-          {["Wesleyan", "Columbia", "MIT", "Stanford", "Yale", "Brown", "Cornell", "Penn", "Dartmouth", "Vassar", "GWU", "Bates", "Williams", "Middlebury", "Bryn Mawr", "Colorado College", "Gonzaga", "Baylor", "Ole Miss", "CSUN", "CSU Chico", "CSU Dominguez Hills", "Rose-Hulman", "Seton Hall", "Salve Regina", "Niagara", "Eastern", "Immaculata", "Point Loma", "Swarthmore", "Oberlin", "Macalester", "Georgetown Law"].map(school => (
+          {["Wesleyan", "Columbia", "MIT", "Stanford", "Yale", "Brown", "Cornell", "Penn", "Dartmouth", "Vassar", "GWU", "Bates", "Williams", "Middlebury", "Bryn Mawr", "Colorado College", "Gonzaga", "Baylor", "Ole Miss", "CSUN", "CSU Chico", "CSU Dominguez Hills", "Rose-Hulman", "Seton Hall", "Salve Regina", "Niagara", "Eastern", "Immaculata", "Point Loma", "Swarthmore", "Oberlin", "Macalester", "Georgetown Law", "Lafayette"].map(school => (
             <span key={school} className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">{school}</span>
           ))}
+          <span className="text-xs text-gray-400 px-1">+ more coming</span>
         </div>
         <div className="flex items-center gap-4 pt-2">
           <Link
