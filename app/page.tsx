@@ -55,7 +55,7 @@ const CAPABILITIES = [
   },
   {
     title: "Faculty & research",
-    description: "Find professors by research topic, see their active NIH grants, publications, and lab opportunities. Compare research strength across all five institutions simultaneously.",
+    description: "Find professors by research topic, see their active NIH grants, publications, and lab opportunities. Compare research strength across all thirty-three institutions simultaneously.",
     examples: ["Who at Stanford studies large language models?", "Which BIOL faculty have active NIH grants?"],
   },
   {
@@ -96,10 +96,10 @@ export default function Home() {
           Academic navigation for students.
         </p>
         <p className="text-xl text-gray-500 max-w-xl leading-relaxed">
-          From career goal to course sequence — across eighteen colleges and universities — through natural conversation with Claude or ChatGPT.
+          From career goal to course sequence — across thirty-three colleges and universities — through natural conversation with Claude or ChatGPT.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
-          {["Wesleyan", "Columbia", "MIT", "Stanford", "Yale", "Brown", "Cornell", "Penn", "Dartmouth", "Vassar", "GWU", "Bates", "Williams", "Middlebury", "Swarthmore", "Oberlin", "Macalester", "Georgetown Law"].map(school => (
+          {["Wesleyan", "Columbia", "MIT", "Stanford", "Yale", "Brown", "Cornell", "Penn", "Dartmouth", "Vassar", "GWU", "Bates", "Williams", "Middlebury", "Bryn Mawr", "Colorado College", "Gonzaga", "Baylor", "Ole Miss", "CSUN", "CSU Chico", "CSU Dominguez Hills", "Rose-Hulman", "Seton Hall", "Salve Regina", "Niagara", "Eastern", "Immaculata", "Point Loma", "Swarthmore", "Oberlin", "Macalester", "Georgetown Law"].map(school => (
             <span key={school} className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">{school}</span>
           ))}
         </div>
