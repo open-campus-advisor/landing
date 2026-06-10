@@ -74,7 +74,7 @@ const HOW_IT_WORKS = [
   {
     step: "02",
     title: "The graph connects",
-    description: "Open Campus Advisor traverses the academic graph in real time — live course data, faculty research, degree requirements, and career outcomes across all five institutions.",
+    description: "Open Campus Advisor traverses the academic graph in real time — live course data, faculty research, degree requirements, and career outcomes across thirty-three colleges and universities.",
   },
   {
     step: "03",
