@@ -85,11 +85,11 @@ const HOW_IT_WORKS = [
 
 export default function Home() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-6 space-y-24">
+    <main className="max-w-4xl mx-auto px-6 pt-2 pb-6 space-y-24">
 
       {/* Hero */}
-      <section className="space-y-6">
-        <div className="flex justify-center">
+      <section className="space-y-4">
+        <div className="flex justify-center -mb-2">
           <Image src="/logo-mark.png" alt="Open Campus Advisor" width={420} height={420} className="rounded-3xl"/>
         </div>
         <p className="text-2xl text-gray-400 font-light leading-snug">
