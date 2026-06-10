@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "API Integration — Open Campus Advisor",
   description:
-    "Academic data infrastructure for platforms that already own the student relationship. Live course catalogs, faculty research, and career outcomes — three endpoints.",
+    "Academic data infrastructure for platforms that already own the student relationship. Live course catalogs, degree requirements, faculty research, and career outcomes across top US colleges.",
 };
 
 const SCHOOLS = [
@@ -12,13 +12,13 @@ const SCHOOLS = [
   "MIT", "Stanford", "Yale", "Wesleyan", "Williams",
   "Middlebury", "Bates", "Vassar", "Bryn Mawr", "Colorado College",
   "Gonzaga", "Baylor", "Ole Miss", "CSUN", "Lafayette",
-  "+ 14 more",
+  "+ more coming",
 ];
 
 const DATA_LAYERS = [
   { label: "Live course catalogs", detail: "Sections, instructors, enrollment, prereqs — updated nightly from 34 institutions" },
   { label: "Faculty research profiles", detail: "Research interests, publications, active NIH grants by researcher" },
-  { label: "Degree requirements", detail: "Curated major and minor requirements for CS and Environmental Studies across 5 schools" },
+  { label: "Degree requirements", detail: "326 majors across 28 subjects — CS, Economics, History, Biology, Political Science, Engineering, and more — curated from official catalogs and kept current" },
   { label: "Career outcomes", detail: "11 career paths with BLS salary data, outlook, skills, and which majors lead there" },
   { label: "Cross-school comparison", detail: "Rank any set of schools by strength in a given topic or research area" },
   { label: "Student context enrichment", detail: "Filter completed courses, rank by career goals, flag timeline risks" },

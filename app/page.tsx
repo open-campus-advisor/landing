@@ -55,13 +55,18 @@ const CAPABILITIES = [
   },
   {
     title: "Faculty & research",
-    description: "Find professors by research topic, see their active NIH grants, publications, and lab opportunities. Compare research strength across all thirty-three institutions simultaneously.",
+    description: "Find professors by research topic, see their active NIH grants, publications, and lab opportunities. Compare research strength across top US colleges and universities simultaneously.",
     examples: ["Who at Stanford studies large language models?", "Which BIOL faculty have active NIH grants?"],
   },
   {
-    title: "Academic paths",
-    description: "Navigate from a career goal backwards to majors, courses, and professors. Or start from a college or university and see where each major leads — salary ranges, job outlook, and typical employers included.",
-    examples: ["What major and courses lead to climate policy work?", "Compare CS programs at MIT and Stanford by curriculum and faculty."],
+    title: "Degree requirements",
+    description: "Real major requirements — not approximations. CS, Economics, History, Biology, Political Science, Philosophy, and dozens more, curated from official catalogs and kept current. Covers open curriculum schools, distribution requirements, and core programs.",
+    examples: ["What courses do I need for the CS major at Brown?", "How do MIT and Stanford differ in their CS requirements?"],
+  },
+  {
+    title: "Academic paths & career outcomes",
+    description: "Navigate from a career goal backwards to majors, courses, and professors — or forward from a major to see where it leads. Salary ranges, job outlook, and typical employers grounded in BLS data.",
+    examples: ["What major and courses lead to climate policy work?", "What does a machine learning engineer actually earn?"],
   },
 ];
 
@@ -199,7 +204,7 @@ export default function Home() {
           <div className="border border-gray-100 rounded-xl p-6 space-y-3">
             <p className="text-xs font-medium uppercase tracking-widest text-gray-400">For platforms</p>
             <p className="text-sm text-gray-500 leading-relaxed">
-              If your platform already owns the student relationship — Scoir, Naviance, College Board, a counseling tool — you don&apos;t need to build the data layer. Ours is live across 34 institutions.
+              If your platform already owns the student relationship — Scoir, Naviance, College Board, a counseling tool — you don&apos;t need to build the data layer. Ours is live across dozens of top US colleges and universities.
             </p>
             <p className="text-sm text-gray-500 leading-relaxed">
               Three endpoints. Your product, our data.
