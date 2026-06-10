@@ -228,6 +228,7 @@ export default function Home() {
         <span>© 2026 Open Campus Advisor</span>
         <div className="flex gap-6">
           <Link href="mailto:hello@opencampusadvisor.org" className="hover:text-gray-600 transition-colors">Contact</Link>
+          <Link href="/terms" className="hover:text-gray-600 transition-colors">Terms</Link>
           <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
         </div>
       </footer>

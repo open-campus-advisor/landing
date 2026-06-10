@@ -83,8 +83,9 @@ export default function Privacy() {
 
       </div>
 
-      <footer className="border-t border-gray-100 pt-8 text-sm text-gray-400">
+      <footer className="border-t border-gray-100 pt-8 flex items-center justify-between text-sm text-gray-400">
         <Link href="/" className="hover:text-gray-600 transition-colors">← Back to Open Campus Advisor</Link>
+        <Link href="/terms" className="hover:text-gray-600 transition-colors">Terms of Service</Link>
       </footer>
 
     </main>
