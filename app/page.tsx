@@ -45,6 +45,10 @@ const EXAMPLES = [
     q: "Which BIOL faculty have active NIH grants right now?",
     category: "Research",
   },
+  {
+    q: "What research is happening in Notre Dame's theology and global affairs departments?",
+    category: "Research",
+  },
 ];
 
 const CAPABILITIES = [
@@ -104,7 +108,7 @@ export default function Home() {
           Know exactly where you&apos;re going. Real courses, real faculty, real career outcomes — through natural conversation with Claude or ChatGPT.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
-          {["Wesleyan", "Columbia", "MIT", "Stanford", "Yale", "Brown", "Cornell", "Penn", "Dartmouth", "Vassar", "GWU", "Bates", "Williams", "Middlebury", "Bryn Mawr", "Colorado College", "Gonzaga", "Baylor", "Ole Miss", "CSUN", "CSU Chico", "CSU Dominguez Hills", "Rose-Hulman", "Seton Hall", "Salve Regina", "Niagara", "Eastern", "Immaculata", "Point Loma", "Swarthmore", "Oberlin", "Macalester", "Georgetown Law", "Lafayette"].map(school => (
+          {["Wesleyan", "Columbia", "MIT", "Stanford", "Yale", "Brown", "Cornell", "Penn", "Dartmouth", "Notre Dame", "Vassar", "GWU", "Bates", "Williams", "Middlebury", "Bryn Mawr", "Colorado College", "Gonzaga", "Baylor", "Ole Miss", "CSUN", "CSU Chico", "CSU Dominguez Hills", "Rose-Hulman", "Seton Hall", "Salve Regina", "Niagara", "Eastern", "Immaculata", "Point Loma", "Swarthmore", "Oberlin", "Macalester", "Georgetown Law", "Lafayette"].map(school => (
             <span key={school} className="text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">{school}</span>
           ))}
           <span className="text-xs text-gray-400 px-1">+ more coming</span>
