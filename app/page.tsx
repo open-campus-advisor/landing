@@ -95,7 +95,7 @@ export default function Home() {
         <p className="text-2xl text-gray-400 font-light leading-snug">
           Academic navigation for students.
         </p>
-        <p className="text-xl text-gray-500 max-w-xl leading-relaxed">
+        <p className="text-xl text-gray-500 leading-relaxed">
           Know exactly where you&apos;re going. Real courses, real faculty, real career outcomes — through natural conversation with Claude or ChatGPT.
         </p>
         <div className="flex items-center gap-2 flex-wrap">
