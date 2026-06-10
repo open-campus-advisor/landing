@@ -112,10 +112,10 @@ export default function Home() {
             Try with ChatGPT →
           </Link>
           <Link
-            href="mailto:hello@opencampusadvisor.org"
+            href="/integrate"
             className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
           >
-            Bring it to your campus →
+            For platforms →
           </Link>
         </div>
       </section>
@@ -173,20 +173,48 @@ export default function Home() {
       </section>
 
       {/* For institutions */}
-      <section className="space-y-6">
+      <section className="space-y-8">
         <h2 className="text-2xl font-semibold">For colleges & universities</h2>
-        <p className="text-gray-500 max-w-xl">
-          Any college or university with a public course catalog can be connected. Students get live course search, faculty research, degree requirements, and career path navigation — all through Claude or ChatGPT, with no new app to install.
-        </p>
-        <p className="text-gray-500 max-w-xl">
-          Every query is logged anonymously. Your institution gets a dashboard showing what students are actually exploring — trending topics, popular departments, common career paths — updated in real time.
-        </p>
-        <Link
-          href="mailto:hello@opencampusadvisor.org"
-          className="inline-block bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
-        >
-          Get in touch →
-        </Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          {/* Direct use */}
+          <div className="border border-gray-100 rounded-xl p-6 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Connect your campus</p>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Any college or university with a public course catalog can be connected. Students get live course search, faculty research, degree requirements, and career navigation — through Claude or ChatGPT, no new app required.
+            </p>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Every query is logged anonymously. Your institution sees what students are actually exploring — trending topics, popular departments, common career paths.
+            </p>
+            <Link
+              href="mailto:hello@opencampusadvisor.org"
+              className="inline-block text-sm text-gray-900 underline hover:no-underline"
+            >
+              Bring it to your campus →
+            </Link>
+          </div>
+
+          {/* API / Platform integration */}
+          <div className="border border-gray-900 rounded-xl p-6 space-y-3 bg-gray-900 text-white">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">For platforms</p>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              If your platform already owns the student relationship — Scoir, Naviance, College Board, a counseling tool — you don&apos;t need to build the data layer. Ours is live across 34 institutions.
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Three endpoints. Your product, our data.
+            </p>
+            <div className="pt-1 space-y-2">
+              <pre className="text-xs text-gray-400 leading-relaxed">POST /api/v1/batch/path<br />x-institution-id: your-platform</pre>
+              <Link
+                href="/integrate"
+                className="inline-block text-sm text-white underline hover:no-underline"
+              >
+                See integration docs →
+              </Link>
+            </div>
+          </div>
+
+        </div>
       </section>
 
       {/* Footer */}
