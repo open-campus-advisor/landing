@@ -9,14 +9,15 @@ export const metadata: Metadata = {
 
 const SCHOOLS = [
   "Columbia", "Cornell", "Dartmouth", "Brown", "Penn",
-  "MIT", "Stanford", "Yale", "Wesleyan", "Williams",
-  "Middlebury", "Bates", "Vassar", "Bryn Mawr", "Colorado College",
-  "Gonzaga", "Baylor", "Ole Miss", "CSUN", "Lafayette",
-  "+ more coming",
+  "MIT", "Stanford", "Yale", "Notre Dame", "Illinois",
+  "Wesleyan", "Williams", "Middlebury", "Bates", "Vassar",
+  "Bryn Mawr", "Colorado College", "Gonzaga", "Baylor", "Ole Miss",
+  "Harvey Mudd", "Lafayette", "CSUN", "Swarthmore", "Macalester",
+  "+ 12 more",
 ];
 
 const DATA_LAYERS = [
-  { label: "Live course catalogs", detail: "Sections, instructors, enrollment, prereqs — updated nightly from 34 institutions" },
+  { label: "Live course catalogs", detail: "Sections, instructors, enrollment, prereqs — live data across 37 institutions, refreshed every 60 minutes" },
   { label: "Faculty research profiles", detail: "Research interests, publications, active NIH grants by researcher" },
   { label: "Degree requirements", detail: "326 majors across 28 subjects — CS, Economics, History, Biology, Political Science, Engineering, and more — curated from official catalogs and kept current" },
   { label: "Career outcomes", detail: "11 career paths with BLS salary data, outlook, skills, and which majors lead there" },
@@ -93,7 +94,7 @@ export default function Integrate() {
           <span className="text-gray-400 font-light">Not another chatbot.</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          If your platform already owns the student relationship, you don&apos;t need to build the data layer. Ours is live across 34 colleges and universities — courses, faculty, research grants, degree requirements, career outcomes.
+          If your platform already owns the student relationship, you don&apos;t need to build the data layer. Ours is live across 37 colleges and universities — courses, faculty, research grants, degree requirements, career outcomes.
         </p>
         <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
           Three endpoints. Your product, our data.
@@ -137,7 +138,7 @@ export default function Integrate() {
           ))}
         </div>
         <div>
-          <p className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-3">34 live institutions</p>
+          <p className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-3">37 live institutions</p>
           <div className="flex flex-wrap gap-2">
             {SCHOOLS.map((s) => (
               <span key={s} className={`text-xs px-2.5 py-1 rounded-full ${s.startsWith("+") ? "text-gray-400" : "bg-gray-100 text-gray-600 font-medium"}`}>
@@ -200,7 +201,7 @@ export default function Integrate() {
             <p className="text-xs font-medium uppercase tracking-widest text-gray-400">We own</p>
             <ul className="space-y-2 text-sm text-gray-700">
               {[
-                "Live course catalogs across 34 institutions",
+                "Live course catalogs across 37 institutions",
                 "Faculty research profiles and NIH grants",
                 "Degree requirements and career outcomes",
                 "Cloudflare bypass, API maintenance, uptime",
@@ -255,7 +256,10 @@ export default function Integrate() {
       {/* Footer */}
       <footer className="border-t border-gray-100 pt-8 flex items-center justify-between text-sm text-gray-400">
         <Link href="/" className="hover:text-gray-600 transition-colors">← Open Campus Advisor</Link>
-        <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
+        <div className="flex gap-6">
+          <Link href="/terms" className="hover:text-gray-600 transition-colors">Terms</Link>
+          <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
+        </div>
       </footer>
 
     </main>
