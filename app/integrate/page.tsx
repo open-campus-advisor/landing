@@ -20,7 +20,7 @@ const DATA_LAYERS = [
   { label: "Live course catalogs", detail: "Sections, instructors, enrollment status, and prerequisites — sourced directly from institutional registration systems, refreshed every 60 minutes" },
   { label: "Faculty research profiles", detail: "Research areas, recent publications, and active NIH grant data by investigator, drawn from the public NIH Reporter API" },
   { label: "Degree requirements", detail: "326 curated major programs across 28 disciplines — Computer Science, Economics, Biology, Political Science, Engineering, and more — maintained against official institutional catalogs" },
-  { label: "Career outcome data", detail: "23 career pathways with Bureau of Labor Statistics salary ranges, 10-year outlook projections, skill requirements, and the academic paths that lead there" },
+  { label: "Career outcome data", detail: "47 career pathways across 11 tracks with Bureau of Labor Statistics salary ranges, 10-year outlook projections, skill requirements, and RIASEC interest mapping" },
   { label: "Cross-institutional comparison", detail: "Rank institutions by academic strength in any subject area — courses, faculty concentration, and research activity" },
   { label: "Personalized student enrichment", detail: "Filter completed coursework, rank results by stated goals, surface constraint risks, and generate individualized next-semester recommendations" },
 ];
