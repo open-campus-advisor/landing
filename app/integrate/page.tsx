@@ -17,20 +17,20 @@ const SCHOOLS = [
 ];
 
 const DATA_LAYERS = [
-  { label: "Live course catalogs", detail: "Sections, instructors, enrollment, prereqs — live data across 37 institutions, refreshed every 60 minutes" },
-  { label: "Faculty research profiles", detail: "Research interests, publications, active NIH grants by researcher" },
-  { label: "Degree requirements", detail: "326 majors across 28 subjects — CS, Economics, History, Biology, Political Science, Engineering, and more — curated from official catalogs and kept current" },
-  { label: "Career outcomes", detail: "11 career paths with BLS salary data, outlook, skills, and which majors lead there" },
-  { label: "Cross-school comparison", detail: "Rank any set of schools by strength in a given topic or research area" },
-  { label: "Student context enrichment", detail: "Filter completed courses, rank by career goals, flag timeline risks" },
+  { label: "Live course catalogs", detail: "Sections, instructors, enrollment status, and prerequisites — sourced directly from institutional registration systems, refreshed every 60 minutes" },
+  { label: "Faculty research profiles", detail: "Research areas, recent publications, and active NIH grant data by investigator, drawn from the public NIH Reporter API" },
+  { label: "Degree requirements", detail: "326 curated major programs across 28 disciplines — Computer Science, Economics, Biology, Political Science, Engineering, and more — maintained against official institutional catalogs" },
+  { label: "Career outcome data", detail: "11 career pathways with Bureau of Labor Statistics salary ranges, 10-year outlook projections, skill requirements, and the academic paths that lead there" },
+  { label: "Cross-institutional comparison", detail: "Rank institutions by academic strength in any subject area — courses, faculty concentration, and research activity" },
+  { label: "Personalized student enrichment", detail: "Filter completed coursework, rank results by stated goals, surface constraint risks, and generate individualized next-semester recommendations" },
 ];
 
 const PATTERNS = [
   {
     number: "01",
-    title: "Single-student enrichment",
+    title: "Individual student path query",
     description:
-      "Counselor opens a student profile. Your platform calls /api/v1/path with their context. Results — ranked schools, matched courses, key faculty — appear alongside the student record in your UI.",
+      "A counselor opens a student record. Your platform calls /api/v1/path with the student's academic context. The response — institutions ranked by fit, matched coursework, relevant faculty — surfaces directly within your existing UI alongside the student's record.",
     code: `POST /api/v1/path
 x-institution-id: your-platform
 {
@@ -45,9 +45,9 @@ x-institution-id: your-platform
   },
   {
     number: "02",
-    title: "Cohort batch processing",
+    title: "Cohort enrichment",
     description:
-      "Nightly job enriches all active students in one pass. Twenty at a time, parallel execution, 15-second timeout per item. Results stored in your database — your counselors see them in the morning.",
+      "A scheduled job processes your full active student cohort in a single pass. Up to 20 queries execute in parallel with a 15-second per-item timeout. Results are returned to your data layer — counselors see enriched profiles the following morning without any manual intervention.",
     code: `POST /api/v1/batch/path
 x-institution-id: your-platform
 {
@@ -60,18 +60,18 @@ x-institution-id: your-platform
   },
   {
     number: "03",
-    title: "AI advisor augmentation",
+    title: "AI advisor grounding",
     description:
-      "Your product has its own AI layer. Inject compressed student context and live path data into your system prompt. Your advisor gives grounded, specific recommendations instead of hallucinations.",
-    code: `// Step 1: compress context for injection
+      "Your platform has an existing AI layer. Compress the student's academic context into a compact string and inject it into your system prompt alongside live institutional data. Your AI advisor responds with verified, source-attributed information rather than general knowledge.",
+    code: `// Step 1: compress context for prompt injection
 POST /api/v1/profile/compress
 { "student_context": { ... }, "school": "yale" }
 // → "Junior at Yale, Env Studies, goal: climate policy..."
 
-// Step 2: get live data
+// Step 2: retrieve live institutional data
 POST /api/v1/path
 { "goal": "...", "student_context": { ... } }
-// → ranked schools, real courses, actual faculty`,
+// → ranked institutions, verified courses, active faculty`,
   },
 ];
 
@@ -88,30 +88,30 @@ export default function Integrate() {
 
       {/* Hero */}
       <section className="space-y-6">
-        <p className="text-xs font-medium uppercase tracking-widest text-gray-400">For platforms</p>
+        <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Platform Integration</p>
         <h1 className="text-4xl font-bold leading-tight tracking-tight">
-          Academic data infrastructure.<br />
-          <span className="text-gray-400 font-light">Not another chatbot.</span>
+          Academic intelligence infrastructure.<br />
+          <span className="text-gray-400 font-light">Built for integration.</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          If your platform already owns the student relationship, you don&apos;t need to build the data layer. Ours is live across 37 colleges and universities — courses, faculty, research grants, degree requirements, career outcomes.
+          Platforms that already serve students don&apos;t need to build an academic data layer — they need to connect to one. Open Campus Advisor provides live course catalogs, faculty research profiles, degree requirements, and career outcome data across 37 institutions, available through a single authenticated API.
         </p>
         <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
-          Three endpoints. Your product, our data.
+          Your product surface. Your student relationship. Our data infrastructure.
         </p>
         <div className="flex items-center gap-4 pt-2">
           <Link
             href="mailto:hello@opencampusadvisor.org"
             className="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
           >
-            Request integration access →
+            Request a technical evaluation →
           </Link>
           <a
-            href="https://api.opencampusadvisor.org/openapi.json"
+            href="https://api.opencampusadvisor.org/openapi-chatgpt.json"
             target="_blank"
             className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
           >
-            View OpenAPI spec →
+            View API specification →
           </a>
         </div>
       </section>
@@ -119,15 +119,15 @@ export default function Integrate() {
       {/* The pitch */}
       <section className="space-y-6 border-l-2 border-gray-100 pl-6">
         <p className="text-gray-900 font-medium text-lg leading-relaxed">
-          &ldquo;We&apos;ve already built the live data infrastructure you&apos;d spend 18 months building. Plug our graph into your product and your AI advisor has real answers instead of hallucinations.&rdquo;
+          Building and maintaining live academic data infrastructure across hundreds of institutions — sourcing from registration systems, parsing catalog formats, managing Cloudflare bypass, keeping degree requirements current — is an 18-month engineering investment before you ship a single feature. We have already built it. Integration is a contract and three API endpoints.
         </p>
       </section>
 
       {/* What's in the graph */}
       <section className="space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold">What&apos;s in the graph</h2>
-          <p className="text-gray-500 mt-2">Six data layers. All live. None of it hallucinated.</p>
+          <h2 className="text-2xl font-semibold">Data coverage</h2>
+          <p className="text-gray-500 mt-2">Six structured data layers sourced from institutional catalogs, federal grant databases, and Bureau of Labor Statistics data.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {DATA_LAYERS.map((layer) => (
@@ -152,8 +152,8 @@ export default function Integrate() {
       {/* Integration patterns */}
       <section className="space-y-12">
         <div>
-          <h2 className="text-2xl font-semibold">Three integration patterns</h2>
-          <p className="text-gray-500 mt-2">Pick the one that fits your architecture. Most platforms use all three.</p>
+          <h2 className="text-2xl font-semibold">Integration patterns</h2>
+          <p className="text-gray-500 mt-2">Three deployment models. Each maps to a distinct use case. Most institutional integrations use all three in combination.</p>
         </div>
         {PATTERNS.map((p) => (
           <div key={p.number} className="space-y-4">
@@ -171,16 +171,16 @@ export default function Integrate() {
 
       {/* Institution analytics */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">You see your usage. Not everyone else&apos;s.</h2>
+        <h2 className="text-2xl font-semibold">Usage analytics and reporting</h2>
         <p className="text-gray-500 max-w-2xl leading-relaxed">
-          Every request tagged with <code className="bg-gray-100 px-1.5 py-0.5 rounded text-xs">x-institution-id</code> is tracked separately in PostHog. You get a scoped view of:
+          Every request carrying your <code className="bg-gray-100 px-1.5 py-0.5 rounded text-xs">x-institution-id</code> header is attributed to your account in our analytics layer. Your data is scoped to your institution — you see your students&apos; usage patterns, not the aggregate.
         </p>
         <ul className="space-y-2 text-sm text-gray-600">
           {[
-            "Top goals — what your students are actually trying to figure out",
-            "Top schools queried — which institutions matter to your cohort",
-            "Gap signals — what your students ask about that we can't answer yet (feeds our roadmap)",
-            "Tool usage — which API surfaces your integration uses most",
+            "Goal distribution — what academic and career paths your students are exploring",
+            "Institutional demand — which colleges and universities your cohort is actively researching",
+            "Coverage signals — queries your students ask that fall outside current data coverage, reported as structured gap events",
+            "Endpoint utilization — which API surfaces your integration depends on most",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <span className="text-gray-300 mt-0.5">›</span>
@@ -189,39 +189,39 @@ export default function Integrate() {
           ))}
         </ul>
         <p className="text-sm text-gray-400">
-          Gap signals from your platform go directly to the top of our school build queue. If your students keep asking about Harvard and we don&apos;t have it — we build it next.
+          Coverage gap signals from your institution feed directly into our data expansion roadmap. Schools your students query most — and that we don&apos;t yet cover — move to the top of the build queue.
         </p>
       </section>
 
       {/* What you don't handle */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">What we handle. What you handle.</h2>
+        <h2 className="text-2xl font-semibold">Scope of service</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">We own</p>
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Provided by Open Campus Advisor</p>
             <ul className="space-y-2 text-sm text-gray-700">
               {[
-                "Live course catalogs across 37 institutions",
-                "Faculty research profiles and NIH grants",
-                "Degree requirements and career outcomes",
-                "Cloudflare bypass, API maintenance, uptime",
-                "Expanding the school graph toward 400",
-                "Data quality and freshness",
+                "Live course catalog data across 37 institutions",
+                "Faculty research profiles and NIH grant records",
+                "Curated degree requirements and career outcome data",
+                "Data sourcing, parsing, maintenance, and uptime",
+                "Ongoing institutional coverage expansion toward 400 schools",
+                "Data freshness and quality assurance",
               ].map((i) => (
                 <li key={i} className="flex items-start gap-2"><span className="text-gray-300">›</span>{i}</li>
               ))}
             </ul>
           </div>
           <div className="space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">You own</p>
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Retained by your platform</p>
             <ul className="space-y-2 text-sm text-gray-700">
               {[
-                "Student identity and accounts",
-                "Session management and persistence",
-                "UI and product experience",
-                "Your AI system prompt and persona",
-                "Auth for your users",
-                "Rate limiting per student",
+                "Student identity, authentication, and account management",
+                "Session state and data persistence",
+                "Product interface and user experience",
+                "AI system prompt, persona, and response presentation",
+                "Per-student rate limiting and access controls",
+                "Compliance obligations to your end users",
               ].map((i) => (
                 <li key={i} className="flex items-start gap-2"><span className="text-gray-300">›</span>{i}</li>
               ))}
@@ -232,9 +232,9 @@ export default function Integrate() {
 
       {/* CTA */}
       <section className="border border-gray-100 rounded-2xl p-8 space-y-4">
-        <h2 className="text-xl font-semibold">Get integration access</h2>
+        <h2 className="text-xl font-semibold">Begin a technical evaluation</h2>
         <p className="text-gray-500 leading-relaxed">
-          We&apos;re working with a small number of platform partners to build the integration and validate the fit. If your platform has a student relationship that could use better academic data, let&apos;s talk.
+          We work with a select number of platform partners through a structured evaluation process. If your platform serves students and you are assessing the build vs. partner decision on academic data infrastructure, we are available for a technical conversation.
         </p>
         <div className="flex items-center gap-4 pt-2">
           <Link
