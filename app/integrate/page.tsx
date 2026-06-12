@@ -303,6 +303,87 @@ get_student_context()
         </div>
       </section>
 
+      {/* API reference — enterprise signals */}
+      <section className="space-y-12 border-t border-gray-100 pt-16">
+        <div>
+          <h2 className="text-2xl font-semibold">API reference</h2>
+          <p className="text-gray-500 mt-2 max-w-2xl">Stability guarantees, rate limits, authentication, and error handling for production integrations.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          {/* Versioning */}
+          <div className="border border-gray-100 rounded-xl p-6 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Versioning</p>
+            <p className="font-medium text-gray-900 text-sm">Stable — 90-day deprecation notice</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              The <code className="bg-gray-100 px-1 rounded">/api/v1/</code> prefix is frozen. New endpoints are additive and never break existing integrations. Breaking changes — if ever required — receive a 90-day notice and a new version prefix before the old one is retired.
+            </p>
+          </div>
+
+          {/* Rate limits */}
+          <div className="border border-gray-100 rounded-xl p-6 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Rate limits</p>
+            <p className="font-medium text-gray-900 text-sm">300 requests / minute per API key</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Cross-school endpoints (<code className="bg-gray-100 px-1 rounded">/search</code>, <code className="bg-gray-100 px-1 rounded">/faculty/search</code>, <code className="bg-gray-100 px-1 rounded">/path</code>) count as one request regardless of how many schools are queried. The batch endpoint processes up to 20 goal queries per request. Sustained higher limits available for enterprise contracts.
+            </p>
+          </div>
+
+          {/* SLA */}
+          <div className="border border-gray-100 rounded-xl p-6 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Uptime & freshness</p>
+            <p className="font-medium text-gray-900 text-sm">99.5% monthly uptime · 60-minute cache</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              The API is hosted on Railway with a persistent process — TTL cache survives between requests, so every call after the first in each 60-minute window is fast. Data reflects institutional registration systems as of the last cache refresh. Historical uptime available on request.
+            </p>
+          </div>
+
+          {/* Auth */}
+          <div className="border border-gray-100 rounded-xl p-6 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Authentication</p>
+            <p className="font-medium text-gray-900 text-sm">API key (B2B) or Bearer JWT (student)</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Send <code className="bg-gray-100 px-1 rounded">x-api-key: oca_live_...</code> on all requests. Course data is publicly readable — the key is required for usage attribution, per-institution analytics, and access to Mode 2 personalization endpoints. Keys are issued per integration and rotatable on request.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Error codes */}
+        <div className="space-y-4">
+          <p className="text-sm font-medium text-gray-700">Error responses</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs text-left border-collapse">
+              <thead>
+                <tr className="border-b border-gray-100">
+                  <th className="py-2 pr-6 font-medium text-gray-500 w-16">Status</th>
+                  <th className="py-2 pr-6 font-medium text-gray-500 w-32">Meaning</th>
+                  <th className="py-2 font-medium text-gray-500">What to do</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-600">
+                {[
+                  ["400", "Bad request", "Missing or invalid parameter — check query string and request body against the spec"],
+                  ["401", "Unauthorized", "Bearer JWT required — student must authenticate via /api/v1/auth/login"],
+                  ["403", "Forbidden", "API key present but not recognized — verify x-api-key matches the issued value"],
+                  ["404", "Not found", "School slug, course ID, or resource does not exist — verify against /api/v1/schools"],
+                  ["429", "Rate limited", "Exceeded 300 req/min — implement exponential backoff; contact us for higher limits"],
+                  ["500", "Server error", "Transient scraping or provider failure — retry after 10 seconds"],
+                ].map(([code, meaning, action]) => (
+                  <tr key={code} className="border-b border-gray-50">
+                    <td className="py-2.5 pr-6 font-mono font-medium text-gray-900">{code}</td>
+                    <td className="py-2.5 pr-6 text-gray-700">{meaning}</td>
+                    <td className="py-2.5 text-gray-500">{action}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
       {/* CTA */}
       <section className="border border-gray-100 rounded-2xl p-8 space-y-4">
         <h2 className="text-xl font-semibold">Begin a technical evaluation</h2>
