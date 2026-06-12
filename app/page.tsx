@@ -137,7 +137,7 @@ export default function Home() {
             href="/integrate"
             className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
           >
-            For platforms →
+            REST API &amp; MCP →
           </Link>
         </div>
       </section>

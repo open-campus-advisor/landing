@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "B2B API Integration — Academic Data Infrastructure | Open Campus Advisor",
+  title: "Integration — REST API & MCP Agentic Tools | Open Campus Advisor",
   description:
-    "Academic data infrastructure API for EdTech platforms. Live course catalogs, degree requirements, faculty research, career outcomes, and student context enrichment across 37 US colleges. Built for Scoir, Naviance, College Board, and similar platforms.",
+    "Two integration surfaces: a REST API for platform partners (Scoir, Naviance, College Board) and an MCP server for agentic AI workflows in Claude Desktop and Claude Code. 17 tools, session-scoped student context, live data across 37 US colleges.",
   alternates: { canonical: "https://opencampusadvisor.org/integrate" },
 };
 
@@ -89,13 +89,13 @@ export default function Integrate() {
 
       {/* Hero */}
       <section className="space-y-6">
-        <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Platform Integration</p>
+        <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Platform & Agentic Integration</p>
         <h1 className="text-4xl font-bold leading-tight tracking-tight">
           Academic intelligence infrastructure.<br />
-          <span className="text-gray-400 font-light">Built for integration.</span>
+          <span className="text-gray-400 font-light">REST API and MCP server.</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Platforms that already serve students don&apos;t need to build an academic data layer — they need to connect to one. Open Campus Advisor provides live course catalogs, faculty research profiles, degree requirements, and career outcome data across 37 institutions, available through a single authenticated API.
+          Two integration surfaces. A <strong className="text-gray-700">REST API</strong> for platforms that already serve students — Scoir, Naviance, College Board — providing live course catalogs, faculty research, degree requirements, and career outcomes across 37 institutions. An <strong className="text-gray-700">MCP server</strong> for agentic AI workflows in Claude Desktop and Claude Code, with 17 tools, session-scoped student context, and full PostHog observability.
         </p>
         <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
           Your product surface. Your student relationship. Our data infrastructure.
@@ -168,6 +168,70 @@ export default function Integrate() {
             </pre>
           </div>
         ))}
+      </section>
+
+      {/* MCP / Agentic integration */}
+      <section className="space-y-8 border-t border-gray-100 pt-16">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-2">Agentic integration</p>
+          <h2 className="text-2xl font-semibold">MCP server for Claude Desktop &amp; Claude Code</h2>
+          <p className="text-gray-500 mt-2 max-w-2xl">
+            For AI-native workflows, Open Campus Advisor ships as a Model Context Protocol (MCP) server. Claude agents get 17 purpose-built tools, session-scoped student context, and full observability — no API key management required for local use.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { label: "17 structured tools", detail: "Course search, faculty research, degree requirements, career outcomes, cross-school comparison, gap reporting — all as discrete MCP tools with typed schemas." },
+            { label: "Session-scoped student context", detail: "set_student_context merges the student's profile progressively across turns. Course results are filtered and ranked automatically. RIASEC codes auto-derive career targets." },
+            { label: "get_student_context", detail: "Agents read back the stored profile at any point — to confirm what they know, summarize for the student, or verify before making a recommendation." },
+            { label: "Personalized path planning", detail: "When student context is set, explore_academic_path switches to POST with full context in body, returning personalized next-semester recommendations and constraint warnings." },
+            { label: "advisor_persona prompt", detail: "ADVISOR_INSTRUCTIONS exposed as a named MCP prompt. Hosts inject it as a system context to activate the advisor character — direct, recommendation-oriented, never generic." },
+            { label: "Full PostHog observability", detail: "Every tool call tracked with school, tool name, response_time_ms, and whether student context is active. Agentic sessions are fully instrumented alongside REST usage." },
+          ].map((f) => (
+            <div key={f.label} className="border border-gray-100 rounded-xl p-5 space-y-2">
+              <p className="font-medium text-gray-900 text-sm">{f.label}</p>
+              <p className="text-xs text-gray-500 leading-relaxed">{f.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-4">
+          <p className="text-sm font-medium text-gray-700">Install in Claude Desktop or Claude Code:</p>
+          <pre className="bg-gray-900 text-gray-100 p-5 rounded-xl text-xs overflow-x-auto leading-relaxed">
+            <code>{`# Claude Code
+claude mcp add open-campus-advisor -- npx open-campus-advisor
+
+# Claude Desktop — add to claude_desktop_config.json
+{
+  "mcpServers": {
+    "open-campus-advisor": {
+      "command": "npx",
+      "args": ["open-campus-advisor"],
+      "env": { "SCHOOL": "wesleyan" }
+    }
+  }
+}`}</code>
+          </pre>
+          <p className="text-sm font-medium text-gray-700 pt-2">Agentic workflow example:</p>
+          <pre className="bg-gray-900 text-gray-100 p-5 rounded-xl text-xs overflow-x-auto leading-relaxed">
+            <code>{`// Agent learns about the student across turns:
+set_student_context({ year: "junior", major: "Environmental Studies",
+  completed_courses: ["ENV200", "PLSC301"], career_targets: ["climate policy analyst"] })
+
+// All subsequent calls are automatically filtered + ranked:
+search_courses({ query: "climate", department: "EVST" })
+// → completed courses removed, results ranked by career target
+
+// With student context set, path uses POST with full context:
+explore_academic_path({ goal: "climate policy analyst", schools: "yale,columbia" })
+// → personalized_next_semester + constraint warnings per school
+
+// Agent confirms what it knows:
+get_student_context()
+// → { year: "junior", major: "Environmental Studies", ... }`}</code>
+          </pre>
+        </div>
       </section>
 
       {/* Institution analytics */}
