@@ -95,7 +95,7 @@ export default function Integrate() {
           <span className="text-gray-400 font-light">REST API and MCP server.</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Two integration surfaces. A <strong className="text-gray-700">REST API</strong> for platforms that already serve students — Scoir, Naviance, College Board — providing live course catalogs, faculty research, degree requirements, and career outcomes across 37 institutions. An <strong className="text-gray-700">MCP server</strong> for agentic AI workflows in Claude Desktop and Claude Code, with 17 tools, session-scoped student context, and full PostHog observability.
+          Two integration surfaces. A <strong className="text-gray-700">REST API</strong> for platforms that already serve students — providing live course catalogs, faculty research, degree requirements, and career outcomes across 37 institutions. An <strong className="text-gray-700">MCP server</strong> for agentic AI workflows in Claude Desktop and Claude Code, with 17 tools, session-scoped student context, and full PostHog observability.
         </p>
         <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
           Your product surface. Your student relationship. Our data infrastructure.
