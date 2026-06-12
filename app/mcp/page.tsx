@@ -151,7 +151,7 @@ export default function MCPPage() {
           <div className="border border-gray-100 rounded-xl p-6 space-y-3">
             <p className="font-medium text-gray-900 text-sm">API Key — Claude Code / Desktop</p>
             <p className="text-xs text-gray-500 leading-relaxed">
-              Course data is publicly readable — no key required for Claude Code or Desktop. Add an <code className="bg-gray-100 px-1 rounded">Authorization: Bearer</code> header with an API key for usage attribution and personalized responses. Contact <a href="mailto:hello@opencampusadvisor.org" className="underline">hello@opencampusadvisor.org</a> to request one.
+              Course data is publicly readable — no key required to use the tools. Add <code className="bg-gray-100 px-1 rounded">Authorization: Bearer &lt;key&gt;</code> to attribute usage to your institution in analytics. Contact <a href="mailto:hello@opencampusadvisor.org" className="underline">hello@opencampusadvisor.org</a> to request a key.
             </p>
           </div>
         </div>
