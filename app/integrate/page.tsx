@@ -108,11 +108,11 @@ export default function Integrate() {
             Request a technical evaluation →
           </Link>
           <a
-            href="https://api.opencampusadvisor.org/openapi.json"
+            href="https://api.opencampusadvisor.org/docs"
             target="_blank"
             className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
           >
-            View API specification →
+            API reference →
           </a>
         </div>
       </section>
@@ -178,6 +178,9 @@ export default function Integrate() {
           <p className="text-gray-500 mt-2 max-w-2xl">
             For AI-native workflows, Open Campus Advisor runs as a hosted remote Model Context Protocol (MCP) server. No installation required. Claude agents get 19 purpose-built tools, session-scoped student context, and full observability — connect with a single URL.
           </p>
+          <div className="flex items-center gap-4 mt-4">
+            <Link href="/mcp" className="text-sm text-gray-900 underline hover:no-underline">Full MCP documentation →</Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

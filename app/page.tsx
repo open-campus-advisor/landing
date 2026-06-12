@@ -125,7 +125,7 @@ export default function Home() {
           ))}
           <span className="text-xs text-gray-400 px-1">+ 51 more</span>
         </div>
-        <div className="flex items-center gap-4 pt-2">
+        <div className="flex items-center gap-4 pt-2 flex-wrap">
           <Link
             href="https://chatgpt.com/g/g-6a2583a8a7cc819198378184eaf9b15f-wesleyan-academic-advisor"
             target="_blank"
@@ -134,10 +134,16 @@ export default function Home() {
             Try with ChatGPT →
           </Link>
           <Link
+            href="/mcp"
+            className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
+          >
+            Connect to Claude →
+          </Link>
+          <Link
             href="/integrate"
             className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
           >
-            REST API &amp; MCP →
+            REST API →
           </Link>
         </div>
       </section>
