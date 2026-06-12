@@ -2,9 +2,10 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "API Integration — Open Campus Advisor",
+  title: "B2B API Integration — Academic Data Infrastructure | Open Campus Advisor",
   description:
-    "Academic data infrastructure for platforms that already own the student relationship. Live course catalogs, degree requirements, faculty research, and career outcomes across top US colleges.",
+    "Academic data infrastructure API for EdTech platforms. Live course catalogs, degree requirements, faculty research, career outcomes, and student context enrichment across 37 US colleges. Built for Scoir, Naviance, College Board, and similar platforms.",
+  alternates: { canonical: "https://opencampusadvisor.org/integrate" },
 };
 
 const SCHOOLS = [

@@ -1,0 +1,40 @@
+# Open Campus Advisor
+
+> The AI academic advisor that knows your campus. Live course catalogs, faculty research, degree requirements, and career outcomes across 37 top US colleges — through natural conversation with Claude or ChatGPT.
+
+Open Campus Advisor is an academic data platform that connects students to real, live information about courses, professors, degree requirements, and career outcomes at 37 US colleges and universities. It is available as a ChatGPT Custom GPT and through Claude Desktop/Claude Code via MCP.
+
+## What it does
+
+- **Live course search**: Search any of 37 college course catalogs by topic, department, or instructor. Get current enrollment data, prerequisites, and scheduling.
+- **Faculty research**: Find professors by research interest, see their active NIH grants, and discover lab opportunities.
+- **Degree requirements**: Navigate major requirements, elective choices, and prerequisite sequences across schools.
+- **Career outcomes**: Explore 47 career paths with BLS salary data, job outlook, skills, and the academic paths that lead there.
+- **Academic path planning**: Ask "where should I study to become a climate policy analyst?" and get schools ranked by course offerings + faculty + research funding.
+- **Personalized recommendations**: With a student profile (completed courses, career goals, constraints), responses are filtered and ranked to the specific student.
+
+## Covered institutions (37)
+
+MIT, Stanford, Yale, Brown, Columbia, Cornell, Penn, Dartmouth, Notre Dame, University of Illinois Urbana-Champaign, Wesleyan, Williams, Middlebury, Bates, Vassar, Bryn Mawr, Colorado College, Harvey Mudd, Swarthmore, Oberlin, Macalester, Baylor, Gonzaga, Ole Miss, CSU Northridge, CSU Chico, CSU Dominguez Hills, Rose-Hulman, Georgetown Law, GWU, Lafayette, Seton Hall, Salve Regina, Niagara, Eastern, Immaculata, Point Loma.
+
+## How to use it
+
+**Via ChatGPT:** Search for "Open Campus Advisor" in the GPT store, or ask any ChatGPT conversation about course, faculty, or career questions at any of the covered schools.
+
+**Via Claude:** Install the MCP package: `claude mcp add open-campus-advisor -- npx open-campus-advisor`
+
+**API (for platforms):** REST API at https://api.opencampusadvisor.org — full OpenAPI spec at https://api.opencampusadvisor.org/openapi.json
+
+## Key facts
+
+- 37 colleges with live enrollment data
+- 344 curated degree requirements across 28 subjects
+- 47 career outcome profiles with BLS salary data and RIASEC interest codes
+- Faculty profiles include active NIH grants from NIH Reporter API
+- Data refreshed every 60 minutes from institutional sources
+- Free for students; B2B API for platforms
+
+## Contact
+
+hello@opencampusadvisor.org
+https://opencampusadvisor.org

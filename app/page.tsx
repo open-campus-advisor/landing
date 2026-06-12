@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Open Campus Advisor — AI Academic Advisor | Course Search, Faculty Research & Career Planning",
+  description: "The AI academic advisor that knows your campus. Search live courses, find research faculty with active NIH grants, navigate degree requirements, and map your path from goals to career outcomes — across MIT, Stanford, Yale, and 34 more top US colleges.",
+  alternates: { canonical: "https://opencampusadvisor.org" },
+};
 
 const EXAMPLES = [
   // Path & career — the most differentiated, lead with it
