@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Integration — REST API & MCP Agentic Tools | Open Campus Advisor",
   description:
-    "Two integration surfaces: a REST API for platforms that already serve students, and a hosted remote MCP server for agentic AI workflows in Claude.ai, Claude Desktop, and Claude Code. 20 tools, session-scoped student context, live data across 101 US colleges.",
+    "Two integration surfaces: a REST API for platforms that already serve students, and a hosted remote MCP server for agentic AI workflows in Claude.ai, Claude Desktop, and Claude Code. 19 tools, session-scoped student context, live data across 101 US colleges.",
   alternates: { canonical: "https://opencampusadvisor.org/integrate" },
 };
 
@@ -95,7 +95,7 @@ export default function Integrate() {
           <span className="text-gray-400 font-light">REST API and MCP server.</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Two integration surfaces. A <strong className="text-gray-700">REST API</strong> for platforms that already serve students — providing live course catalogs, faculty research, degree requirements, and career outcomes across 101 institutions. A hosted <strong className="text-gray-700">remote MCP server</strong> for agentic AI workflows in Claude.ai, Claude Desktop, and Claude Code — 20 tools, session-scoped student context, OAuth profile auto-load, no installation required.
+          Two integration surfaces. A <strong className="text-gray-700">REST API</strong> for platforms that already serve students — providing live course catalogs, faculty research, degree requirements, and career outcomes across 101 institutions. A hosted <strong className="text-gray-700">remote MCP server</strong> for agentic AI workflows in Claude.ai, Claude Desktop, and Claude Code — 19 tools, session-scoped student context, OAuth profile auto-load, no installation required.
         </p>
         <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
           Your product surface. Your student relationship. Our data infrastructure.
@@ -176,13 +176,13 @@ export default function Integrate() {
           <p className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-2">Agentic integration</p>
           <h2 className="text-2xl font-semibold">Remote MCP server — Claude.ai, Desktop &amp; Code</h2>
           <p className="text-gray-500 mt-2 max-w-2xl">
-            For AI-native workflows, Open Campus Advisor runs as a hosted remote Model Context Protocol (MCP) server. No installation required. Claude agents get 20 purpose-built tools, session-scoped student context, and full observability — connect with a single URL.
+            For AI-native workflows, Open Campus Advisor runs as a hosted remote Model Context Protocol (MCP) server. No installation required. Claude agents get 19 purpose-built tools, session-scoped student context, and full observability — connect with a single URL.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { label: "20 structured tools", detail: "Course search, faculty research, degree requirements, career outcomes, cross-school comparison, and gap reporting — all discrete MCP tools with typed schemas across all 101 schools." },
+            { label: "19 structured tools", detail: "Course search, faculty research, degree requirements, career outcomes, cross-school comparison, and gap reporting — all discrete MCP tools with typed schemas across all 101 schools." },
             { label: "No installation required", detail: "Connect via a single URL. No npm install, no local process, no SCHOOL env var. Works in Claude.ai web, Claude Desktop, and Claude Code out of the box." },
             { label: "Session-scoped student context", detail: "set_student_context merges the student's profile progressively across turns. Course results are filtered and ranked automatically. RIASEC codes auto-derive career targets." },
             { label: "OAuth profile auto-load", detail: "When a student signs in with Google through Claude.ai, their stored StudentContext loads automatically at session start — no manual set_student_context call needed." },
