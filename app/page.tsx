@@ -148,6 +148,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust signal strip */}
+      <section className="bg-slate-50 rounded-2xl px-6 py-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            { value: "101", label: "Universities covered" },
+            { value: "60 min", label: "Data refresh cycle" },
+            { value: "28,000+", label: "Faculty profiles" },
+            { value: "12,400+", label: "Active NIH grants" },
+          ].map(s => (
+            <div key={s.label} className="space-y-1">
+              <p className="text-2xl font-bold text-gray-900">{s.value}</p>
+              <p className="text-xs text-gray-400">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="space-y-8">
         <h2 className="text-2xl font-semibold">How it works</h2>
