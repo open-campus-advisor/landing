@@ -117,6 +117,11 @@ export default function MCPPage() {
           <span className="text-xs font-medium text-gray-400 uppercase tracking-widest shrink-0">MCP URL</span>
           <code className="text-sm font-mono text-gray-900">https://api.opencampusadvisor.org/mcp</code>
         </div>
+        <div className="pt-1">
+          <a href="https://smithery.ai/servers/opencampusadvisor/oca" target="_blank" rel="noopener noreferrer">
+            <img src="https://smithery.ai/badge/opencampusadvisor/oca" alt="Listed on Smithery" className="h-5" />
+          </a>
+        </div>
       </section>
 
       {/* Connect */}
