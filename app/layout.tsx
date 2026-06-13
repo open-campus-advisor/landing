@@ -6,7 +6,7 @@ const geist = Geist({ subsets: ["latin"] });
 
 const TITLE = "Open Campus Advisor — AI Academic Advisor for College Students";
 const DESCRIPTION =
-  "The AI academic advisor that knows your campus. Live course catalogs, faculty research, degree requirements, and career outcomes across 101 top US colleges — through natural conversation with Claude or ChatGPT.";
+  "The AI academic advisor that knows your campus. Live course catalogs, faculty research, degree requirements, and career outcomes across 100+ top US colleges — through natural conversation with Claude or ChatGPT.";
 const SITE_URL = "https://opencampusadvisor.org";
 
 export const metadata: Metadata = {
@@ -105,7 +105,7 @@ const jsonLd = {
       publisher: { "@id": `${SITE_URL}/#organization` },
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: [
-        "Live course catalog search across 101 universities",
+        "Live course catalog search across 100+ universities",
         "Faculty research profiles with NIH grant data",
         "Degree requirement navigation",
         "Career outcome data with BLS salary ranges",
@@ -121,7 +121,7 @@ const jsonLd = {
           name: "Which colleges does Open Campus Advisor cover?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Open Campus Advisor covers 101 US colleges and universities including MIT, Stanford, Yale, Brown, Columbia, Cornell, Penn, Dartmouth, Notre Dame, University of Illinois, and more.",
+            text: "Open Campus Advisor covers 100+ US colleges and universities including MIT, Stanford, Yale, Brown, Columbia, Cornell, Penn, Dartmouth, Notre Dame, University of Illinois, and more.",
           },
         },
         {

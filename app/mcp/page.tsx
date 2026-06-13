@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "MCP Server — Open Campus Advisor",
-  description: "Connect Open Campus Advisor to Claude as a remote MCP server. 19 tools, live data across 101 colleges, session-scoped student context. No installation required.",
+  description: "Connect Open Campus Advisor to Claude as a remote MCP server. 19 tools, live data across 100+ colleges, session-scoped student context. No installation required.",
   alternates: { canonical: "https://opencampusadvisor.org/mcp" },
 };
 
@@ -12,7 +12,7 @@ const TOOLS = [
     category: "School & Catalog",
     description: "Per-school tools — all take a school slug as the first parameter.",
     tools: [
-      { name: "list_schools", params: "", description: "All 101 available school slugs." },
+      { name: "list_schools", params: "", description: "All available school slugs." },
       { name: "list_departments", params: "school", description: "All department codes at a school. Call this before searching courses." },
       { name: "search_courses", params: "school, query, department?, term?", description: "Find courses by keyword and/or department. Returns sections, instructors, live enrollment." },
       { name: "get_course_details", params: "school, courseId, term?", description: "Full course record: description, prerequisites, gen-ed area, seat availability per section." },
@@ -26,7 +26,7 @@ const TOOLS = [
   },
   {
     category: "Cross-School",
-    description: "Search or compare across all 101 schools simultaneously.",
+    description: "Search or compare across all 100+ schools simultaneously.",
     tools: [
       { name: "search_all_schools", params: "query, schools?", description: "Course offerings across all schools ranked by topic coverage." },
       { name: "search_faculty_all_schools", params: "query, schools?", description: "Researchers across all schools by topic — auto-discovers departments." },
@@ -111,7 +111,7 @@ export default function MCPPage() {
           <span className="text-gray-400 font-light">No installation.</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Open Campus Advisor runs as a hosted <strong className="text-gray-700">Model Context Protocol server</strong> — connect Claude to live course catalogs, faculty research, degree requirements, and career outcomes across 101 US colleges and universities.
+          Open Campus Advisor runs as a hosted <strong className="text-gray-700">Model Context Protocol server</strong> — connect Claude to live course catalogs, faculty research, degree requirements, and career outcomes across 100+ US colleges and universities.
         </p>
         <div className="bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 flex items-center gap-4">
           <span className="text-xs font-medium text-gray-400 uppercase tracking-widest shrink-0">MCP URL</span>

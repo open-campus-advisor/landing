@@ -3,9 +3,9 @@ import Link from "next/link";
 import { SCHOOLS, SCHOOL_TYPE_ORDER } from "../../lib/schools";
 
 export const metadata: Metadata = {
-  title: "All 101 Colleges & Universities — Live Course Data",
+  title: "100+ Colleges & Universities — Live Course Data",
   description:
-    "Browse live course catalogs, faculty research, and degree requirements for 101 US colleges and universities — MIT, Stanford, Yale, Wesleyan, and more. Updated every 60 minutes.",
+    "Browse live course catalogs, faculty research, and degree requirements for 100+ US colleges and universities — MIT, Stanford, Yale, Wesleyan, and more. Updated every 60 minutes.",
   alternates: { canonical: "https://opencampusadvisor.org/schools" },
 };
 
@@ -41,7 +41,7 @@ export default function SchoolsPage() {
       <section className="space-y-4">
         <p className="text-xs font-medium uppercase tracking-widest text-gray-400">School Directory</p>
         <h1 className="text-4xl font-bold leading-tight tracking-tight">
-          101 colleges.<br />
+          100+ colleges.<br />
           <span className="text-gray-400 font-light">Live data on every one.</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
