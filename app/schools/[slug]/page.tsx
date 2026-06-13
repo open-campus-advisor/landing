@@ -223,8 +223,16 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
             <Link href="/mcp" className="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors">
               Connect to Claude →
             </Link>
+            <a
+              href="https://chatgpt.com/g/g-6a2583a8a7cc819198378184eaf9b15f-wesleyan-academic-advisor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
+            >
+              Try with ChatGPT →
+            </a>
             <Link href="/schools" className="text-gray-500 text-sm hover:text-gray-900 transition-colors">
-              ← All schools
+              ← Schools
             </Link>
           </div>
         </div>

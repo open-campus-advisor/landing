@@ -143,7 +143,7 @@ export default function Home() {
             href="/schools"
             className="text-gray-500 text-sm hover:text-gray-900 transition-colors"
           >
-            All 101 schools →
+            Schools →
           </Link>
           <Link
             href="/integrate"
