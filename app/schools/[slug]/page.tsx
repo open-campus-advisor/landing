@@ -126,8 +126,8 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
         </div>
       </section>
 
-      {/* Departments */}
-      {deptGroups.length > 0 && (
+      {/* Departments — only show when count suggests real data (>20 means school-specific) */}
+      {deptGroups.length > 20 && (
         <section className="space-y-4">
           <div className="flex items-baseline gap-2">
             <h2 className="text-xl font-semibold">Departments</h2>
