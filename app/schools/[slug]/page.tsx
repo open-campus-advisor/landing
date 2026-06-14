@@ -231,9 +231,6 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
             >
               Try with ChatGPT →
             </a>
-            <Link href="/schools" className="text-gray-500 text-sm hover:text-gray-900 transition-colors">
-              ← Schools
-            </Link>
           </div>
         </div>
       </section>
